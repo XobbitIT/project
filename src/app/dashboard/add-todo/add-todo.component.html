@@ -1,0 +1,21 @@
+<div class="container">
+    <form class="auth-form" [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
+        <div class="alert alert-danger" role="alert" *ngIf="serverError">
+            {{serverError}}
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            <div class="invalid-feedback" *ngIf="addTodoForm.controls.name.hasError('required')">
+                Name is <strong>required</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Priority</label>
+            <select class="form-control" formControlName="priority">
+                <option *ngFor="let item of priority" [value]="item.value">{{item.name}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

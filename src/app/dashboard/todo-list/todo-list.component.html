@@ -1,0 +1,7 @@
+<div class="mt-4">
+    <div *ngFor="let todo of todos" class="d-flex justify-content-between mb-3">
+        <p (click)="updateStateTodo(todo)">{{todo.name}} {{todo.priority}} {{todo.complete}}</p>
+        <button class="btn btn-danger" (click)="removeTodo(todo.id)">Delete</button>
+    </div>
+</div>
+

@@ -13,6 +13,7 @@ import { User } from 'firebase';
 export class AuthService {
 
   user$: Observable<User>;
+  userDetail: any;
 
   constructor(
     private afAuth: AngularFireAuth,
